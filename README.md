@@ -1,1 +1,4 @@
 # sectionio-action
+
+SECTION_K8S_API_URL
+SECTION_API_TOKEN

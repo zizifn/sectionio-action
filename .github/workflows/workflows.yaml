@@ -1,0 +1,54 @@
+name: Deployed to Section
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  REPO: ${{ github.repository }}
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: downcase REPO
+        run: |
+          echo "IMAGE_NAME=${REPO,,}" >>${GITHUB_ENV}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Deploy on Section
+        env:
+          SECTION_K8S_API_URL: "${{ secrets.SECTION_K8S_API_URL }}"
+          SECTION_API_TOKEN: "${{ secrets.SECTION_API_TOKEN }}"
+          DEBUG: 1
+        run: | 
+          ./ci/deploy.sh main
