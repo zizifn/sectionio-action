@@ -45,7 +45,7 @@ data:
                 ]
             },
             "streamSettings": {
-                "network": "ws",
+                "network": "tcp",
                 "security": "none"
             }
         }
