@@ -26,5 +26,7 @@ Example:
 ![img](./doc/section3.png)
 
 
+如果你愿意，你也可以在修改 [Dockerfile](./Dockerfile).
+
 如果你愿意，你也可以在 [config](./k8s/config.yaml), 修改任何关于server的配置。
 ![img](./doc/section2.png)
