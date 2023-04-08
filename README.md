@@ -3,6 +3,7 @@
 ## 在 section.io 上，随便创建任何应用后
 
 ## 在应用的设置界面，找到应用的 Kubernetes API Endpoint
+![img](./doc/section4.png)
 
 ## 在 API Tokens 创建一个 SECTION_API_TOKEN
 
@@ -31,6 +32,6 @@ Example:
 ![img](./doc/section3.png)
 
 
-如果你愿意，你也可以在修改 [Dockerfile](./Dockerfile).
+### 如果你愿意，你也可以在修改 [Dockerfile](./Dockerfile).
 
-如果你愿意，你也可以在 [config](./k8s/config.yaml), 修改任何关于server的配置。
+### 如果你愿意，你也可以在 [config](./k8s/config.yaml), 修改任何关于server的配置。
