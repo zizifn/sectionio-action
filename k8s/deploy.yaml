@@ -17,7 +17,7 @@ spec:
       containers:
       - name: sectionio-action
         image: ghcr.io/${IMAGE_NAME}:main
-        command: [ "/usr/bin/xray", "run", "-c", "/etc/xray/server.json" ]
+        # command: [ "/usr/bin/xray", "run", "-c", "/etc/xray/server.json" ]
         volumeMounts:
           - name: config-volume
             mountPath: /etc/xray/
