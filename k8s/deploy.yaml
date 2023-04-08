@@ -17,7 +17,7 @@ spec:
       containers:
       - name: sectionio-action
         image: teddysun/xray:latest
-        command: [ "/usr/bin/xray", "-config ", "/etc/xray/server.json" ]
+        command: [ "/usr/bin/xray", "-c ", "/etc/xray/server.json" ]
         volumeMounts:
           - name: config-volume
             mountPath: /etc/xray
