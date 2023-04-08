@@ -22,5 +22,7 @@ Example:
 
 ## 使用 action 手动，定期部署项目
 
+默认配置是 ws 配置。
+![img](./doc/section3.png)
 如果你愿意，你也可以在 [config](./k8s/config.yaml), 修改任何关于server的配置。
 ![img](./doc/section2.png)
