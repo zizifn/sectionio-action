@@ -10,7 +10,7 @@ main() {
   setCluster
 
   envsubst '$UUID' < ../k8s/config.yaml | kubectl apply -f -
-  kubectl apply -f ../k8s/deploy.yaml
+  envsubst '$IMAGE_NAME' < ../k8s/deploy.yaml | kubectl apply -f -
   kubectl apply -f ../k8s/ingress-upstream.yaml
 
   kubectl rollout restart deployment sectionio-action
