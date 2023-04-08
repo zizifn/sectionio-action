@@ -5,8 +5,8 @@ on:
 # cron job every two days at 04:00
   schedule:
     - cron: '0 4 * * */2'
-  push:
-    branches: [main]
+  # push:
+  #   branches: [main]
   workflow_dispatch:
 
 env:
