@@ -1,22 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-express
+  name: sectionio-action
   labels:
-    app: node-express
+    app: sectionio-action
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: node-express
+      app: sectionio-action
   template:
     metadata:
       labels:
-        app: node-express
+        app: sectionio-action
     spec:
       containers:
-      - name: node-express
-        image: ghcr.io/${IMAGE_NAME}:main
+      - name: sectionio-action
+        image: teddysun/xray:latest
+        command: [ "/usr/bin/xray", "-config ", "/etc/xray/server.json" ]
+        volumeMounts:
+          - name: config-volume
+            mountPath: /etc/xray
         imagePullPolicy: Always
         resources:
           requests:
@@ -27,3 +31,7 @@ spec:
             cpu: "200m"
         ports:
         - containerPort: 80
+      volumes:
+        - name: config-volume
+          configMap:
+            name: server-config

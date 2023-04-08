@@ -11,7 +11,7 @@ spec:
       protocol: TCP
       targetPort: 80
     selector:
-        app: node-express
+        app: sectionio-action
     sessionAffinity: None
     type: ClusterIP
 status:

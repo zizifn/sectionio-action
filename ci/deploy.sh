@@ -9,10 +9,11 @@ cert=/etc/ssl/certs/ca-certificates.crt
 main() {
   setCluster
 
-  envsubst '$IMAGE_NAME' < ../k8s/deploy.yaml | kubectl apply -f -
+  envsubst '$UUID' < ../k8s/config.yaml | kubectl apply -f -
+  kubectl apply -f ../k8s/deploy.yaml
   kubectl apply -f ../k8s/ingress-upstream.yaml
 
-  kubectl rollout restart deployment node-express
+  kubectl rollout restart deployment sectionio-action
 }
 
 setCluster() {
