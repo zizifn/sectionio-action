@@ -13,7 +13,7 @@
 | Name | Value |
 | ---- | ----- |
 | SECTION_API_TOKEN | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
-| SECTION_API_ENDPOINT | https://****.kube.api.section.io/ |
+| SECTION_K8S_API_URL | https://****.kube.api.section.io/ |
 | UUID | cbf1fca7-fa54-446e-88f1-68cb9a1ed5a6 |
 
 Example:
