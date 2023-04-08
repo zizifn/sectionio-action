@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: my-config-map
+  name: server-config
 data:
   UUID: ${UUID}
   my-json-object: |
