@@ -20,7 +20,7 @@ Example:
 ![img](./doc/section-io.png)
 
 
-## 使用 action 手动，定期部署项目
+## 使用 action 手动 或 定期部署项目（每2天一次）
 
 默认配置是 ws 配置。
 ![img](./doc/section3.png)
