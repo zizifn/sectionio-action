@@ -4,7 +4,7 @@ metadata:
   name: server-config
 data:
   UUID: ${UUID}
-  my-json-object: |
+  server.json: |
     {
     "log": {
         "loglevel": "warning"
