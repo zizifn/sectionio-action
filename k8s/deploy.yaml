@@ -21,6 +21,12 @@ spec:
         volumeMounts:
           - name: config-volume
             mountPath: /etc/xray/
+        env:
+        - name: UUID
+          valueFrom:
+            configMapKeyRef:
+              name: server-config
+              key: UUID
         imagePullPolicy: Always
         resources:
           requests:

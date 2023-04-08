@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: my-config-map
 data:
+  UUID: ${UUID}
   my-json-object: |
     {
     "log": {
