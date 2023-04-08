@@ -1,6 +1,6 @@
 # sectionio-action
 
-## 在 section.io 上创建任何应用后
+## 在 section.io 上，随便创建任何应用后
 
 ## 在应用的设置界面，找到应用的 Kubernetes API Endpoint
 
