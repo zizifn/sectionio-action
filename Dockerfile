@@ -1,3 +1,3 @@
-FROM nginx:latest
+FROM teddysun/xray:latest
 
-COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
